@@ -1,0 +1,26 @@
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-handlers-package: com.sibdev.file_reader_app.config.typehandler
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 1
+      maximum-pool-size: 10
+      pool-name: ${spring.application.name}-pool
+    username: user
+    password: 1111
+    url: jdbc:postgresql://localhost:5432/file_reader_app
+
+  application:
+    name: file_reader_app
+
+server:
+  port: 8080
+
+service:
+  csv:
+    separator: ";"
+
