@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @RestController
@@ -19,7 +18,7 @@ public class DataRetrievingController {
     private final DataProcessingService service;
 
     @GetMapping
-    public CsvDataResponse uploadData(@RequestParam @NotBlank String fileHeader) {
+    public CsvDataResponse uploadData(@RequestParam String fileHeader) {
         final List<CsvDataDto> upload = service.upload(fileHeader);
         return new CsvDataResponse().setData(upload);
     }
