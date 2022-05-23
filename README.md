@@ -17,19 +17,20 @@
 Указать необходимые креды для запуска 
    
 Приложение по дефолту поднимается на 8080 порт
+
 Application.yml содержит сепаратор используемый в csv
         
 ### примеры валидных запросов:
 Примеры валидных запросов:
 
-    -//загрузка данных из файла
+    //загрузка данных из файла
     curl --location --request POST 'http://localhost:8080/api/v1/files' \
          --header 'Content-Type: application/json' \
          --form 'file=@"path-to-file"'
           
         
-     //получение данных по заголовку
-     curl --location --request GET 'http://localhost:8080/api/v1/contents?fileHeader=Period' \
+    //получение данных по заголовку
+    curl --location --request GET 'http://localhost:8080/api/v1/contents?fileHeader=Period' \
        
 
  
